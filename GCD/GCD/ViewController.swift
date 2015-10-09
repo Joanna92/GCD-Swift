@@ -20,10 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
-        groupDemo()
-    }
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        
+//        groupDemo()
+//    }
     
 //    MARK:调度组
     func groupDemo() {
@@ -33,26 +33,26 @@ class ViewController: UIViewController {
         dispatch_group_enter(g)
         dispatch_async(q) {
             
-            println("A====\(NSThread.currentThread())")
+            print("A====\(NSThread.currentThread())")
             dispatch_group_leave(g)
         }
         
         dispatch_group_enter(g)
         dispatch_async(q) {
             
-            println("B====\(NSThread.currentThread())")
+            print("B====\(NSThread.currentThread())")
             dispatch_group_leave(g)
         }
         
         dispatch_group_enter(g)
         dispatch_async(q) {
             
-            println("C====\(NSThread.currentThread())")
+            print("C====\(NSThread.currentThread())")
             dispatch_group_leave(g)
         }
 
         dispatch_group_notify(g, dispatch_get_main_queue()) { () -> Void in
-            println("OK====\(NSThread.currentThread())")
+            print("OK====\(NSThread.currentThread())")
         }
     }
     
@@ -62,51 +62,51 @@ class ViewController: UIViewController {
         let q =  dispatch_queue_create("并发", DISPATCH_QUEUE_CONCURRENT)
         
         dispatch_sync(q) {
-            println("A---\(NSThread.currentThread())");
+            print("A---\(NSThread.currentThread())");
             }
         
         dispatch_async(q) {
-            println("B---\(NSThread.currentThread())");
+            print("B---\(NSThread.currentThread())");
             }
         
         dispatch_async(q){
-            println("C---\(NSThread.currentThread())");
+            print("C---\(NSThread.currentThread())");
             }
         
         NSThread.sleepForTimeInterval(0.5)
-        println("come here")
+        print("come here")
     }
 
     
     // MARK: 主队列，异步执行
     func demo6() {
         
-        println("come here")
+        print("come here")
         
         let  q = dispatch_get_main_queue()
         
         for i in 0..<10 {
             dispatch_async(q) {
-                println("\(NSThread .currentThread())----\(i)")
+                print("\(NSThread .currentThread())----\(i)")
             }
         }
-        println("come here?")
+        print("come here?")
     }
 
     
     // MARK: 主队列，同步执行
     func demo5() {
         
-        println("come here")
+        print("come here")
         
         let  q = dispatch_get_main_queue()
         
         for i in 0..<10 {
             dispatch_sync(q) {
-                println("\(NSThread .currentThread())----\(i)")
+                print("\(NSThread .currentThread())----\(i)")
             }
         }
-        println("come here?")
+        print("come here?")
     }
     
     // MARK: 并发队列，异步执行
@@ -115,10 +115,10 @@ class ViewController: UIViewController {
         
         for i in 0..<10 {
             dispatch_async(q) {
-                println("\(NSThread .currentThread())----\(i)")
+                print("\(NSThread .currentThread())----\(i)")
             }
         }
-        println("come here")
+        print("come here")
     }
 
     
@@ -129,10 +129,10 @@ class ViewController: UIViewController {
         
         for i in 0..<10 {
             dispatch_async(q) {
-                println("\(NSThread .currentThread())----\(i)")
+                print("\(NSThread .currentThread())----\(i)")
             }
         }
-        println("come here")
+        print("come here")
 
     }
     
@@ -142,10 +142,10 @@ class ViewController: UIViewController {
         
         for i in 0..<10 {
             dispatch_sync(q) {
-                println("\(NSThread .currentThread())----\(i)")
+                print("\(NSThread .currentThread())----\(i)")
             }
         }
-        println("come here")
+        print("come here")
     }
     
     
@@ -155,10 +155,10 @@ class ViewController: UIViewController {
         
         for i in 0..<10 {
             dispatch_sync(q) {
-                println("\(NSThread .currentThread())----\(i)")
+                print("\(NSThread .currentThread())----\(i)")
             }
         }
-        println("come here")
+        print("come here")
     }
 
 

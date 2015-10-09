@@ -156,6 +156,7 @@
 		57AEA5EC1AB9E2D500206EAC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Joanna;
 				TargetAttributes = {
@@ -409,6 +410,7 @@
 				57AEA6151AB9E2D600206EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57AEA6161AB9E2D600206EAC /* Build configuration list for PBXNativeTarget "GCDTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +419,7 @@
 				57AEA6181AB9E2D600206EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
